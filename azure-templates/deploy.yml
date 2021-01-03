@@ -1,6 +1,10 @@
 parameters:
-  buildConfiguration: ''
-  webAppName: ''
+- name: webAppName
+  type: string
+  default: ''
+- name: buildConfiguration
+  type: string
+  default: ''
 
 steps:
 - download: current
