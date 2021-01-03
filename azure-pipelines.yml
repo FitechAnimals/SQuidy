@@ -1,8 +1,8 @@
 trigger:
   branches:
     include:
-    - '$(prodReleaseBranchName)'
-    - '$(devReleaseBranchName)'
+    - 'master'
+    - 'release-dev'
 
 variables:
   prodReleaseBranchName: 'master'
