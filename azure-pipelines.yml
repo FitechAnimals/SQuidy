@@ -1,5 +1,12 @@
+variables:
+  prodReleaseBranchName: 'master'
+  devReleaseBranchName: 'release-dev'
+
 trigger:
-- '*'
+  branches:
+    include:
+    - '$(prodReleaseBranchName)'
+    - '$(devReleaseBranchName)'
 
 stages:
 - stage: 'Build'
@@ -46,6 +53,12 @@ stages:
 - stage: 'Dev'
   displayName: 'Deploy to the dev environment'
   dependsOn: Build
+  condition: |
+    and
+    (
+      succeeded(),
+      eq(variables['Build.SourceBranchName'], variables['devReleaseBranchName'])
+    )
   jobs:
   - deployment: Deploy
     pool:
@@ -65,6 +78,12 @@ stages:
 - stage: 'Prod'
   displayName: 'Deploy to the prod environment'
   dependsOn: Build
+  condition: |
+    and
+    (
+      succeeded(),
+      eq(variables['Build.SourceBranchName'], variables['prodReleaseBranchName'])
+    )
   jobs:
   - deployment: Deploy
     pool:
