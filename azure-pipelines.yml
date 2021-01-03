@@ -1,9 +1,6 @@
 trigger:
 - '*'
 
-variables:
-  buildConfiguration: 'Release'
-
 stages:
 - stage: 'Build'
   displayName: 'Build the web application'
@@ -62,7 +59,7 @@ stages:
           steps:
           - template: azure-templates/deploy.yml
             parameters:
-              buildConfiguration: '$(buildConfiguration)'
+              buildConfiguration: 'Debug'
               webAppName: '$(WebAppNameDev)'
 
 - stage: 'Prod'
