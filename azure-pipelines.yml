@@ -1,12 +1,12 @@
-variables:
-  prodReleaseBranchName: 'master'
-  devReleaseBranchName: 'release-dev'
-
 trigger:
   branches:
     include:
     - '$(prodReleaseBranchName)'
     - '$(devReleaseBranchName)'
+
+variables:
+  prodReleaseBranchName: 'master'
+  devReleaseBranchName: 'release-dev'
 
 stages:
 - stage: 'Build'
