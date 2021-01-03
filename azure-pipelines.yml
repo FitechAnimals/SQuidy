@@ -61,9 +61,9 @@ stages:
         deploy:
           steps:
           - template: azure-templates/deploy.yml
-          parameters:
-            buildConfiguration: '$(buildConfiguration)'
-            webAppName: '$(WebAppNameDev)'
+            parameters:
+              buildConfiguration: '$(buildConfiguration)'
+              webAppName: '$(WebAppNameDev)'
 
 - stage: 'Prod'
   displayName: 'Deploy to the prod environment'
@@ -80,6 +80,6 @@ stages:
         deploy:
           steps:
           - template: azure-templates/deploy.yml
-          parameters:
-            buildConfiguration: 'Release'
-            webAppName: '$(WebAppName)'
+            parameters:
+              buildConfiguration: 'Release'
+              webAppName: '$(WebAppName)'
