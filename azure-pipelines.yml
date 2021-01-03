@@ -19,7 +19,7 @@ stages:
       vmImage: 'ubuntu-latest'
 
     variables:
-      wwwrootDir: 'App/wwwroot'
+      wwwrootDir: 'src/App/wwwroot'
       dotnetSdkVersion: '5.0.x'
 
     steps:
