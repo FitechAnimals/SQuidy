@@ -1,0 +1,13 @@
+parameters:
+  buildConfiguration: ''
+  webAppName: ''
+
+steps:
+- download: current
+  artifact: drop
+- task: AzureWebApp@1
+  displayName: 'Azure App Service Deploy. Build: $(buildConfiguration). App Name: $(webAppName)'
+  inputs:
+    azureSubscription: 'squidyManagedIdentitySc'
+    appName: '$(webAppName)'
+    package: '$(Pipeline.Workspace)/drop/$(buildConfiguration)/*.zip'
