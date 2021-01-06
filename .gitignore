@@ -352,5 +352,12 @@ MigrationBackup/
 # Visual Studio Code
 .vscode/
 
-# Tmp directory
-tmp/
+# Temporary
+[Tt]mp/
+[Tt]emp/
+
+# Tools
+[Tt]ools/
+
+# .NET Core SDK
+.dotnet/
