@@ -351,3 +351,13 @@ MigrationBackup/
 
 # Visual Studio Code
 .vscode/
+
+# Temporary
+[Tt]mp/
+[Tt]emp/
+
+# Tools
+[Tt]ools/
+
+# .NET Core SDK
+.dotnet/
